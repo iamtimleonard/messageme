@@ -8,3 +8,40 @@
 :root {
   --main-purple: #a3b;
 }
+
+.menu {
+  display: none;
+}
+
+.input {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  max-width: 80rem;
+  padding: 1rem;
+  box-shadow: 0 -0.01rem 1.5rem 0.3rem #aaa;
+}
+
+.input__form {
+  width: 100%;
+  display: flex;
+}
+
+.input__text-input {
+  font-size: 1.6rem;
+  border-radius: 3rem;
+  padding: 1rem;
+  flex-grow: 1;
+}
+
+.input__btn-submit {
+  border: none;
+  margin-left: -5rem;
+  border-radius: 3rem;
+  background-color: var(--main-purple);
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: white;
+  flex-basis: 25%;
+}

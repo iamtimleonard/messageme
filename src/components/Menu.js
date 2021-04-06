@@ -4,8 +4,8 @@ import FriendsList from "./FriendsList";
 
 const Menu = () => {
   return (
-    <aside>
-      <h1>Menu</h1>
+    <aside className="menu">
+      <h1 className="menu__title">Menu</h1>
       <RoomsList />
       <FriendsList />
     </aside>
