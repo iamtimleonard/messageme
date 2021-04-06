@@ -1,5 +1,5 @@
-import React from "react";
-import Message from "./Message";
+import { useState } from "react";
+import Messages from "./Messages";
 import Input from "./Input";
 
 const messages = [
@@ -26,10 +26,14 @@ const messages = [
 ];
 
 const Conversation = () => {
+  const [activeMessages, setActiveMessages] = useState(messages);
+  let handleNewMessage = (msg) => {
+    setActiveMessages((prevValue) => [...prevValue, msg]);
+  };
   return (
     <div className="main__container">
-      <Message messages={messages} />
-      <Input />
+      <Messages messages={activeMessages} />
+      <Input handleNewMessage={handleNewMessage} />
     </div>
   );
 };

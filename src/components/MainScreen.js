@@ -7,9 +7,9 @@ const MainScreen = () => {
   const { user } = useUserContext();
   return (
     <main className="main">
-      <h1 className="main__title">Welcome {user}</h1>
+      <h1 className="main__title">MessageMe</h1>
       <Conversation />
-      <Menu />
+      <Menu user={user} />
     </main>
   );
 };
