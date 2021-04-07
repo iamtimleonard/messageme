@@ -2,13 +2,16 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import { UserContextProvider } from "./context/user";
+import { MenuContextProvider } from "./context/menu";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
     <UserContextProvider>
-      <App />
+      <MenuContextProvider>
+        <App />
+      </MenuContextProvider>
     </UserContextProvider>
   </React.StrictMode>,
   document.getElementById("root")

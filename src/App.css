@@ -7,4 +7,69 @@
 
 :root {
   --main-purple: #a3b;
+  --main-purple-light: rgba(171, 51, 187, 0.596);
+}
+
+.menu {
+  display: none;
+}
+
+.input {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  padding: 1rem;
+  box-shadow: 0 -0.01rem 1.5rem 0.3rem #aaa;
+}
+
+.input__form {
+  width: 100%;
+  display: flex;
+}
+
+.input__text-input {
+  font-size: 1.6rem;
+  border-radius: 3rem;
+  padding: 1rem;
+  flex-grow: 1;
+}
+
+.input__btn-submit {
+  border: none;
+  margin-left: -5rem;
+  border-radius: 3rem;
+  background-color: var(--main-purple);
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: white;
+  flex-basis: 15rem;
+  box-shadow: 0.01rem 0.01rem 0.1rem 0.1rem var(--main-purple-light);
+}
+
+.messages {
+  padding: 2rem;
+}
+
+.messages__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.messages__message {
+  font-size: 1.6rem;
+  width: fit-content;
+  padding: 1rem;
+  margin: 0.5rem;
+  border-radius: 2rem;
+  color: white;
+}
+
+.messages--self {
+  background-color: var(--main-purple);
+  align-self: flex-end;
+}
+
+.messages--receive {
+  background-color: #aaa;
 }
