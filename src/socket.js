@@ -18,6 +18,7 @@ const useChat = () => {
         ownedByCurrentUser: message.senderId === socketRef.current.id,
       };
       setMessages((messages) => [...messages, incomingMessage]);
+      window.scrollTo(0, document.body.scrollHeight);
     });
 
     return () => {
