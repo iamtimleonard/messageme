@@ -10,6 +10,10 @@
   --main-purple-light: rgba(171, 51, 187, 0.596);
 }
 
+.main__container {
+  padding-bottom: 5rem;
+}
+
 .menu {
   display: none;
 }
@@ -20,6 +24,7 @@
   right: 0;
   width: 100%;
   padding: 1rem;
+  background-color: white;
   box-shadow: 0 -0.01rem 1.5rem 0.3rem #aaa;
 }
 
