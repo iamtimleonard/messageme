@@ -9,6 +9,7 @@ const useChat = () => {
 
   useEffect(() => {
     socketRef.current = socketIOClient(SOCKET_SERVER_URL);
+    console.log(socketRef.current);
 
     socketRef.current.on(NEW_CHAT_MESSAGE_EVENT, (message) => {
       const incomingMessage = {
