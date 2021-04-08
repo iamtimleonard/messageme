@@ -17,6 +17,7 @@ const Login = ({ isReturning }) => {
   const userLogin = (e) => {
     e.preventDefault();
     handleRegister(userInput);
+    isReturning();
   };
 
   return (
