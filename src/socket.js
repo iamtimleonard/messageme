@@ -1,14 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 import socketIOClient from "socket.io-client";
+import { useUserContext } from "./context/user";
 import { SOCKET_SERVER_URL } from "./utils";
 const NEW_CHAT_MESSAGE_EVENT = "newChatMessage";
 
 const useChat = () => {
   const [messages, setMessages] = useState([]);
   const socketRef = useRef();
-
+  const { user } = useUserContext();
   useEffect(() => {
-    socketRef.current = socketIOClient(SOCKET_SERVER_URL);
+    socketRef.current = socketIOClient(SOCKET_SERVER_URL, {
+      user: user,
+    });
     console.log(socketRef.current);
 
     socketRef.current.on(NEW_CHAT_MESSAGE_EVENT, (message) => {
