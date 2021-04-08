@@ -21,8 +21,20 @@ export const UserContextProvider = ({ children }) => {
         console.error("Error:", error);
       });
   };
+  const handleRegister = (userInfo) => {
+    if (userInfo.password !== userInfo.confirmPassword) {
+      return;
+    }
+    fetch(`${SOCKET_SERVER_URL}/register`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userInfo),
+    });
+  };
   return (
-    <UserContext.Provider value={{ user, handleLogin }}>
+    <UserContext.Provider value={{ user, handleLogin, handleRegister }}>
       {children}
     </UserContext.Provider>
   );
