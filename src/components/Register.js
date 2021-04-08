@@ -1,9 +1,13 @@
 import { useState } from "react";
 import { useUserContext } from "../context/user";
 
-const Login = ({ isNew }) => {
-  const { handleLogin } = useUserContext();
-  const [userInput, setUserInput] = useState({ username: "", password: "" });
+const Login = ({ isReturning }) => {
+  const { handleRegister } = useUserContext();
+  const [userInput, setUserInput] = useState({
+    username: "",
+    password: "",
+    confirmPassword: "",
+  });
   const handleChange = (e) => {
     setUserInput((prevValue) => {
       return { ...prevValue, [e.target.name]: e.target.value };
@@ -12,7 +16,8 @@ const Login = ({ isNew }) => {
 
   const userLogin = (e) => {
     e.preventDefault();
-    handleLogin(userInput);
+    handleRegister(userInput);
+    isReturning();
   };
 
   return (
@@ -41,10 +46,18 @@ const Login = ({ isNew }) => {
             name="password"
             placeholder="enter password"
           />
-          <button className="login__btn">Login</button>
+          <input
+            className="login__input"
+            type="password"
+            onChange={(e) => handleChange(e)}
+            value={userInput.confirmPassword}
+            placeholder="confirm password"
+            name="confirmPassword"
+          />
+          <button className="login__btn">Register</button>
         </form>
-        <button className="login__btn" onClick={isNew}>
-          New User?
+        <button className="login__btn" onClick={isReturning}>
+          Returning User?
         </button>
       </div>
     </>
