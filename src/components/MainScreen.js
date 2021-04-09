@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import hamburger from "../assets/icon-hamburger.svg";
 import Conversation from "./Conversation";
 import Menu from "./Menu";
@@ -9,17 +10,19 @@ const MainScreen = () => {
   const { user } = useUserContext();
   const { activeRoom, openMenu } = useMenuContext();
   return (
-    <main className="main">
-      <header className="main__header">
-        <h1 className="main__title">{`${activeRoom}`}</h1>
-        <button className="main__menu-toggle" onClick={openMenu}>
-          <img className="main__hamburger" src={hamburger} alt="open menu" />
-        </button>
-      </header>
+    <Router>
+      <main className="main">
+        <header className="main__header">
+          <h1 className="main__title">{`${activeRoom}`}</h1>
+          <button className="main__menu-toggle" onClick={openMenu}>
+            <img className="main__hamburger" src={hamburger} alt="open menu" />
+          </button>
+        </header>
 
-      <Conversation />
-      <Menu user={user} />
-    </main>
+        <Route path="/:roomId" exact component={Conversation}></Route>
+        <Menu user={user} />
+      </main>
+    </Router>
   );
 };
 

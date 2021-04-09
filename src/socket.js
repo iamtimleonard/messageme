@@ -4,13 +4,14 @@ import { useUserContext } from "./context/user";
 import { SOCKET_SERVER_URL } from "./utils";
 const NEW_CHAT_MESSAGE_EVENT = "newChatMessage";
 
-const useChat = () => {
+const useChat = (roomId) => {
   const [messages, setMessages] = useState([]);
   const socketRef = useRef();
   const { user } = useUserContext();
   useEffect(() => {
     socketRef.current = socketIOClient(SOCKET_SERVER_URL, {
       user: user,
+      query: { roomId },
     });
     console.log(socketRef.current);
 
@@ -24,16 +25,16 @@ const useChat = () => {
     });
 
     return () => {
+      setMessages([]);
       socketRef.current.disconnect();
     };
-  }, [user]);
+  }, [user, roomId]);
 
   const sendMessage = (messageBody) => {
     socketRef.current.emit(NEW_CHAT_MESSAGE_EVENT, {
       ...messageBody,
     });
   };
-
   return { messages, sendMessage };
 };
 

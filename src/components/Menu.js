@@ -1,6 +1,5 @@
 import React from "react";
-import RoomsList from "./RoomsList";
-import FriendsList from "./FriendsList";
+import MenuList from "./MenuList";
 import close from "../assets/icon-close.svg";
 import { useMenuContext } from "../context/menu";
 
@@ -12,8 +11,7 @@ const Menu = () => {
         <img src={close} alt="close menu"></img>
       </button>
       <h2 className="menu__title">MessageMe</h2>
-      <RoomsList />
-      <FriendsList />
+      <MenuList />
     </aside>
   );
 };

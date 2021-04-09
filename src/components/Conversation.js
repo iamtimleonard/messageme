@@ -2,10 +2,14 @@ import Messages from "./Messages";
 import Input from "./Input";
 import useChat from "../socket";
 
-const Conversation = () => {
-  const { messages, sendMessage } = useChat();
+const Conversation = (props) => {
+  let { roomId } = props.match.params;
+  roomId = roomId === "Main" ? "/" : roomId;
+  console.log(roomId);
+  let { messages, sendMessage } = useChat(roomId);
 
   let handleNewMessage = (msg) => {
+    console.log(messages);
     sendMessage(msg);
   };
   return (

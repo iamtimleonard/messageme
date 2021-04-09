@@ -22,6 +22,7 @@ const Input = ({ handleNewMessage }) => {
           className="input__text-input"
           type="text"
           name="chat text"
+          placeholder="type here"
         />
         <button className="input__btn-submit">Send</button>
       </form>

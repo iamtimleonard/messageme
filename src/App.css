@@ -86,8 +86,13 @@ body {
 }
 
 .menu__list-item {
-  font-size: 1.8rem;
   margin: 0.5rem 0;
+}
+
+.menu__link {
+  font-size: 1.8rem;
+  color: black;
+  text-decoration: none;
 }
 
 .menu--open {
