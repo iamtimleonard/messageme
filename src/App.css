@@ -53,9 +53,10 @@ body {
   height: 100vh;
   position: fixed;
   top: 0;
-  left: -40rem;
+  left: -50rem;
   padding: 5rem;
-  transition: all 0.2s ease-in-out;
+  box-shadow: 0 0 2rem 0 var(--main-purple);
+  transition: all 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
 .menu__toggle {
@@ -90,7 +91,7 @@ body {
 }
 
 .menu--open {
-  transform: translate(40rem);
+  transform: translate(50rem);
 }
 
 .input {
