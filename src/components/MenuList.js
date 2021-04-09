@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import useChat from "../socket";
 import { useMenuContext } from "../context/menu";
 
 const rooms = ["Main", "Sports", "TV", "Music"];
